@@ -1,0 +1,26 @@
+﻿@model YogNatomy.Models.Trainer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trainer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.trainername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trainername)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.trainerid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

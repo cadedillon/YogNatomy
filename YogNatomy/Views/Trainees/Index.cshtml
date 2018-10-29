@@ -1,0 +1,63 @@
+﻿@model IEnumerable<YogNatomy.Models.Trainee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.traineename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.traineeheight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.traineeweight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.traineeage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fitnesslevel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trainer.trainername)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.traineename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.traineeheight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.traineeweight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.traineeage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fitnesslevel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trainer.trainername)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.traineeid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.traineeid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.traineeid })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,74 @@
+﻿@model YogNatomy.Models.Pose
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pose</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.posename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.poseclass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.poseclass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.primarymuscles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.primarymuscles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.secondarymuscles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.secondarymuscles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fitnesslevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fitnesslevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MuscleGroup.groupname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MuscleGroup.groupname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PoseClass1.classname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoseClass1.classname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.poseid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

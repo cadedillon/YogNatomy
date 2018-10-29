@@ -1,0 +1,69 @@
+﻿@model IEnumerable<YogNatomy.Models.Pose>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.posename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poseclass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.primarymuscles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.secondarymuscles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fitnesslevel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MuscleGroup.groupname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PoseClass1.classname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.posename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poseclass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primarymuscles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.secondarymuscles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fitnesslevel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MuscleGroup.groupname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PoseClass1.classname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.poseid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.poseid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.poseid })
+        </td>
+    </tr>
+}
+
+</table>

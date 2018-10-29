@@ -1,0 +1,80 @@
+﻿@model YogNatomy.Models.Pose
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Pose</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.posename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.poseclass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.poseclass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.primarymuscles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.primarymuscles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.secondarymuscles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.secondarymuscles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fitnesslevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fitnesslevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MuscleGroup.groupname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MuscleGroup.groupname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PoseClass1.classname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoseClass1.classname)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
