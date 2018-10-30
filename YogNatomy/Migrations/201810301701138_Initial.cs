@@ -3,7 +3,7 @@ namespace YogNatomy.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialModel : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -53,10 +53,11 @@ namespace YogNatomy.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        Class = c.String(),
+                        PoseClass = c.String(),
                         ClassId = c.Int(nullable: false),
                         PrimaryMuscle = c.String(),
                         SecondaryMuscle = c.String(),
+                        MuscleGroupId = c.Int(nullable: false),
                         FitnessLevel = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
