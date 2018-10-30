@@ -12,7 +12,7 @@ namespace YogNatomy.Controllers
 {
     public class TrainersController : Controller
     {
-        private YogNatomyEntities db = new YogNatomyEntities();
+        private YogNatomyContext db = new YogNatomyContext();
 
         // GET: Trainers
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace YogNatomy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "trainerid,trainername")] Trainer trainer)
+        public ActionResult Create([Bind(Include = "Id,Name")] Trainer trainer)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace YogNatomy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "trainerid,trainername")] Trainer trainer)
+        public ActionResult Edit([Bind(Include = "Id,Name")] Trainer trainer)
         {
             if (ModelState.IsValid)
             {

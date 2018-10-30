@@ -11,64 +11,56 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.posename)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.posename)
+            @Html.DisplayFor(model => model.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.poseclass)
+            @Html.DisplayNameFor(model => model.Class)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.poseclass)
+            @Html.DisplayFor(model => model.Class)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.primarymuscles)
+            @Html.DisplayNameFor(model => model.ClassId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.primarymuscles)
+            @Html.DisplayFor(model => model.ClassId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.secondarymuscles)
+            @Html.DisplayNameFor(model => model.PrimaryMuscle)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.secondarymuscles)
+            @Html.DisplayFor(model => model.PrimaryMuscle)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fitnesslevel)
+            @Html.DisplayNameFor(model => model.SecondaryMuscle)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.fitnesslevel)
+            @Html.DisplayFor(model => model.SecondaryMuscle)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MuscleGroup.groupname)
+            @Html.DisplayNameFor(model => model.FitnessLevel)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MuscleGroup.groupname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PoseClass1.classname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PoseClass1.classname)
+            @Html.DisplayFor(model => model.FitnessLevel)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.poseid }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

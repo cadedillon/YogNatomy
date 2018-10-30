@@ -12,13 +12,12 @@ namespace YogNatomy.Controllers
 {
     public class PosesController : Controller
     {
-        private YogNatomyEntities db = new YogNatomyEntities();
+        private YogNatomyContext db = new YogNatomyContext();
 
         // GET: Poses
         public ActionResult Index()
         {
-            var poses = db.Poses.Include(p => p.MuscleGroup).Include(p => p.PoseClass1);
-            return View(poses.ToList());
+            return View(db.Poses.ToList());
         }
 
         // GET: Poses/Details/5
@@ -39,8 +38,6 @@ namespace YogNatomy.Controllers
         // GET: Poses/Create
         public ActionResult Create()
         {
-            ViewBag.musclegroupid = new SelectList(db.MuscleGroups, "groupid", "groupname");
-            ViewBag.classid = new SelectList(db.PoseClasses, "classid", "classname");
             return View();
         }
 
@@ -49,7 +46,7 @@ namespace YogNatomy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "poseid,posename,poseclass,classid,primarymuscles,secondarymuscles,musclegroupid,fitnesslevel")] Pose pose)
+        public ActionResult Create([Bind(Include = "Id,Name,Class,ClassId,PrimaryMuscle,SecondaryMuscle,FitnessLevel")] Pose pose)
         {
             if (ModelState.IsValid)
             {
@@ -58,8 +55,6 @@ namespace YogNatomy.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.musclegroupid = new SelectList(db.MuscleGroups, "groupid", "groupname", pose.musclegroupid);
-            ViewBag.classid = new SelectList(db.PoseClasses, "classid", "classname", pose.classid);
             return View(pose);
         }
 
@@ -75,8 +70,6 @@ namespace YogNatomy.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.musclegroupid = new SelectList(db.MuscleGroups, "groupid", "groupname", pose.musclegroupid);
-            ViewBag.classid = new SelectList(db.PoseClasses, "classid", "classname", pose.classid);
             return View(pose);
         }
 
@@ -85,7 +78,7 @@ namespace YogNatomy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "poseid,posename,poseclass,classid,primarymuscles,secondarymuscles,musclegroupid,fitnesslevel")] Pose pose)
+        public ActionResult Edit([Bind(Include = "Id,Name,Class,ClassId,PrimaryMuscle,SecondaryMuscle,FitnessLevel")] Pose pose)
         {
             if (ModelState.IsValid)
             {
@@ -93,8 +86,6 @@ namespace YogNatomy.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.musclegroupid = new SelectList(db.MuscleGroups, "groupid", "groupname", pose.musclegroupid);
-            ViewBag.classid = new SelectList(db.PoseClasses, "classid", "classname", pose.classid);
             return View(pose);
         }
 

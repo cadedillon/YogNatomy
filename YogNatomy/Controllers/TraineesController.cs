@@ -12,13 +12,12 @@ namespace YogNatomy.Controllers
 {
     public class TraineesController : Controller
     {
-        private YogNatomyEntities db = new YogNatomyEntities();
+        private YogNatomyContext db = new YogNatomyContext();
 
         // GET: Trainees
         public ActionResult Index()
         {
-            var trainees = db.Trainees.Include(t => t.Trainer);
-            return View(trainees.ToList());
+            return View(db.Trainees.ToList());
         }
 
         // GET: Trainees/Details/5
@@ -39,7 +38,6 @@ namespace YogNatomy.Controllers
         // GET: Trainees/Create
         public ActionResult Create()
         {
-            ViewBag.trainerid = new SelectList(db.Trainers, "trainerid", "trainername");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace YogNatomy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "traineeid,traineename,trainerid,traineeheight,traineeweight,traineeage,fitnesslevel")] Trainee trainee)
+        public ActionResult Create([Bind(Include = "Id,Name,TrainerId,Height,Weight,Age,FitnessLevel")] Trainee trainee)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace YogNatomy.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.trainerid = new SelectList(db.Trainers, "trainerid", "trainername", trainee.trainerid);
             return View(trainee);
         }
 
@@ -73,7 +70,6 @@ namespace YogNatomy.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.trainerid = new SelectList(db.Trainers, "trainerid", "trainername", trainee.trainerid);
             return View(trainee);
         }
 
@@ -82,7 +78,7 @@ namespace YogNatomy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "traineeid,traineename,trainerid,traineeheight,traineeweight,traineeage,fitnesslevel")] Trainee trainee)
+        public ActionResult Edit([Bind(Include = "Id,Name,TrainerId,Height,Weight,Age,FitnessLevel")] Trainee trainee)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace YogNatomy.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.trainerid = new SelectList(db.Trainers, "trainerid", "trainername", trainee.trainerid);
             return View(trainee);
         }
 

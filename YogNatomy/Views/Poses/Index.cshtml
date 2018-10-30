@@ -12,25 +12,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.posename)
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.poseclass)
+            @Html.DisplayNameFor(model => model.Class)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.primarymuscles)
+            @Html.DisplayNameFor(model => model.ClassId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.secondarymuscles)
+            @Html.DisplayNameFor(model => model.PrimaryMuscle)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fitnesslevel)
+            @Html.DisplayNameFor(model => model.SecondaryMuscle)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MuscleGroup.groupname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PoseClass1.classname)
+            @Html.DisplayNameFor(model => model.FitnessLevel)
         </th>
         <th></th>
     </tr>
@@ -38,30 +35,27 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.posename)
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.poseclass)
+            @Html.DisplayFor(modelItem => item.Class)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.primarymuscles)
+            @Html.DisplayFor(modelItem => item.ClassId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.secondarymuscles)
+            @Html.DisplayFor(modelItem => item.PrimaryMuscle)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.fitnesslevel)
+            @Html.DisplayFor(modelItem => item.SecondaryMuscle)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MuscleGroup.groupname)
+            @Html.DisplayFor(modelItem => item.FitnessLevel)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PoseClass1.classname)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.poseid }) |
-            @Html.ActionLink("Details", "Details", new { id=item.poseid }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.poseid })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

@@ -11,56 +11,56 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.traineename)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.traineename)
+            @Html.DisplayFor(model => model.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.traineeheight)
+            @Html.DisplayNameFor(model => model.TrainerId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.traineeheight)
+            @Html.DisplayFor(model => model.TrainerId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.traineeweight)
+            @Html.DisplayNameFor(model => model.Height)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.traineeweight)
+            @Html.DisplayFor(model => model.Height)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.traineeage)
+            @Html.DisplayNameFor(model => model.Weight)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.traineeage)
+            @Html.DisplayFor(model => model.Weight)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fitnesslevel)
+            @Html.DisplayNameFor(model => model.Age)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.fitnesslevel)
+            @Html.DisplayFor(model => model.Age)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Trainer.trainername)
+            @Html.DisplayNameFor(model => model.FitnessLevel)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Trainer.trainername)
+            @Html.DisplayFor(model => model.FitnessLevel)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.traineeid }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
