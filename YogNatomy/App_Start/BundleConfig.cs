@@ -25,6 +25,7 @@ namespace YogNatomy
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-journal.css",
                       "~/Content/site.css"));
-        }
+
+        }    
     }
 }

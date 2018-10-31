@@ -6,38 +6,25 @@
     <title>@ViewBag.Title - YogNatomy</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-</head>
-<body style="background-image:url(); background-color: none">
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
-        <div class="container" style="height: 32px">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
-            <a class="navbar-brand" href="/">YogNatomy</a>
-            <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="/Home/About" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="/Home/Contact" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="/Poses/Index" class="nav-link">Poses</a></li>
-                    <li class="nav-item"><a href="/Trainees/Index" class="nav-link">Trainees</a></li>
-                    <li class="nav-item"><a href="/Trainers/Index" class="nav-link">Trainers</a></li>
-                </ul>
     
-                <ul class="nav navbar-nav navbar-right mr-auto">
-                    <li class="nav-item"><a href="/Account/Register" id="registerLink" class="nav-link">Register</a></li>
-                    <li class="nav-item"><a href="/Account/Login" id="loginLink" class="nav-link">Log in</a></li>
-                </ul>
+</head>
+<body style="background-image:url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/cherry-blossom-background-in-gradient-light-sky-sajjaphot.jpg); padding-top: unset;  background-size: cover">
+    <div class="container body-content" style=" max-width:unset; padding-left: 0px;">
+        <div class ="row">
+            <div class="col-md-2" style="background-color:white" >
+                @Html.Partial("_SideBar")
+            </div>
+            <div class="col-md-9">
+                @RenderBody()
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - YogNatomy</p>
+                </footer>
             </div>
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - YogNatomy</p>
-        </footer>
-    </div>
     
+        
+    </div>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
