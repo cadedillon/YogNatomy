@@ -1,0 +1,33 @@
+﻿@model YogNatomy.Models.Pose
+
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+            <table class="table table-primary">
+                <tr>
+                    <td>@Model.Name</td>
+                    <td class="pull-right label label-primary">@Model.PoseClass</td>
+                </tr>
+                
+                <tr class="lead"> 
+                    <td>@Model.PrimaryMuscle</td>
+                </tr>
+
+
+                <tr>
+                    <td>
+
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
