@@ -4,16 +4,70 @@
     ViewBag.Title = "Index";
 }
 
-<h1>Browse Poses</h1>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 
-
-@foreach (var item in Model)
+@using (Html.BeginForm())
 {
-    @Html.Partial("_PoseSummary", item)
+    <p>
+        Search by Name or Primary Muscle: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
 }
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Pose Name", "Index", new { sortOrder = ViewBag.NameSortParam })
+        </th>
+        <th>
+            @Html.ActionLink("Pose Class", "Index", new { sortOrder = ViewBag.ClassSortParam })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassId)
+        </th>
+        <th>
+            @Html.ActionLink("Primary Muscle", "Index", new { sortOrder = ViewBag.MuscleSortParam })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondaryMuscle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FitnessLevel)
+        </th>
+        <th></th>
+    </tr>
 
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PoseClass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimaryMuscle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondaryMuscle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FitnessLevel)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

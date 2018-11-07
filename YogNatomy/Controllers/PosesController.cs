@@ -15,9 +15,43 @@ namespace YogNatomy.Controllers
         private YogNatomyContext db = new YogNatomyContext();
 
         // GET: Poses
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
-            return View(db.Poses.ToList());
+            ViewBag.NameSortParam = String.IsNullOrEmpty(sortOrder) ? "Name_Desc" : "";
+            ViewBag.MuscleSortParam = sortOrder == "Muscle" ? "Muscle_Desc" : "Muscle";
+            ViewBag.ClassSortParam = sortOrder == "Class" ? "Class_Desc" : "Class";
+            var poses = from p in db.Poses
+                        select p;
+
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                poses = poses.Where(p => p.Name.Contains(searchString)
+                                 || p.PrimaryMuscle.Contains(searchString));
+            }
+
+            switch(sortOrder)
+            {
+                case "Name_Desc":
+                    poses = poses.OrderByDescending(p => p.Name);
+                    break;
+                case "Class":
+                    poses = poses.OrderBy(p => p.PoseClass);
+                    break;
+                case "Class_Desc":
+                    poses = poses.OrderByDescending(p => p.PoseClass);
+                    break;
+                case "Muscle_Desc":
+                    poses = poses.OrderByDescending(p => p.PrimaryMuscle);
+                    break;
+                case "Muscle":
+                    poses = poses.OrderBy(p => p.PrimaryMuscle);
+                    break;
+                default:
+                    poses = poses.OrderBy(p => p.Name);
+                    break;
+            }
+
+            return View(poses.ToList());
         }
 
         // GET: Poses/Details/5

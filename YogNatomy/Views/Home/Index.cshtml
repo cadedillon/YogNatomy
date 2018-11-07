@@ -2,14 +2,17 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+<div class="jumbotron" style="align-content:center; text-align:center">
     <h1 class="display-3">Welcome to YogNatomy!</h1>
     <p class="lead">YogNatomy seeks to make Yoga practice fun and intuitive for practicioners of all skill levels.</p>
     <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
+    <p>Select a muscle group from the image map below to display Yoga Poses that targets it.</p>
+    <img src="https://i.pinimg.com/originals/e8/ba/d3/e8bad3336f96727362d59ae0a02305eb.jpg" alt="muscle anatomy"  height="750" width="750" usemap="#anatomymap" style="align-content:center"/>
+
+    <map name="anatomymap">
+        <area shape="rect" coords="130, 210, 250, 350" href="~/Poses/Index/Ab" alt="Abdominals" />
+        <area shape="rect" coords="130, 140, 255, 209" href="~/Poses/Index/Pect" alt="Chest" />
+    </map>
 </div>
 
 <div class="row">
