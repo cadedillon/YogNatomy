@@ -26,7 +26,8 @@ namespace YogNatomy.Controllers
             if(!String.IsNullOrEmpty(searchString))
             {
                 poses = poses.Where(p => p.Name.Contains(searchString)
-                                 || p.PrimaryMuscle.Contains(searchString));
+                                 || p.PrimaryMuscle.Contains(searchString)
+                                 || p.SecondaryMuscle.Contains(searchString));
             }
 
             switch(sortOrder)
