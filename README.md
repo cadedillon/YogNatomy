@@ -27,4 +27,5 @@ Now that I had my basic CRUD functionality, I decided to expand upon that with s
 
 ## YogNatomy Account Registration
 ![accountregistration](https://github.com/cadedillon/YogNatomy/blob/master/YogNatomy%20Annotated%20AccountRegistration.jpg?raw=true)
+
 This is the view for the Account Registration controller's create method.
