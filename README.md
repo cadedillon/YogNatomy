@@ -29,3 +29,9 @@ Now that I had my basic CRUD functionality, I decided to expand upon that with s
 ![accountregistration](https://github.com/cadedillon/YogNatomy/blob/master/YogNatomy%20Annotated%20AccountRegistration.jpg?raw=true)
 
 This is the view for the Account Registration controller's create method.
+
+### Creating a YogNatomy Account
+This is the view that is returned by the "Register" button control, at the bottom of the sidebar. Here, the user can register an account on YogNatomy. In a future update, I wish to provide functionality that will allow users to track the exercises they have completed, design their own custom workouts, and share with other users (and trainers) exercises. For now, the Windows form shown above will simply take information that the user has entered, authenticate it, and then write it to the YogNatomy database.
+
+### Authentication and Security
+I have implemented Authentication on the Model Class "UserAccount" in order to place constraints on the data that the Windows Form will accept. I did this by using the System.Data.Annotations namespace. As you can see in the screen capture, the user input for the password is masked, which I accomplished by specifying the form input type as "password" in the form-group class. Right now, unfortunately, the password is just stored as plain-text in my database, but very soon I will be implementing a one-way hash function that will encrypt the user's password before it writes it to the database in order to increase security.  
