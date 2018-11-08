@@ -24,3 +24,7 @@ YogNatomy pulls its data from a SQL Server database that I have built and then d
 
 ### Searching by Keyword and Ordering
 Now that I had my basic CRUD functionality, I decided to expand upon that with some more complex operations. The column headers that I have circled in the diagram, are actually controls that will sort the data by that column value! Clicking the control more than once will alternate between ascending and descending. In an upcoming update of YogNatomy, I am going to add additional column controls, and add styling to make it more obvious that they are controls rather than standard text headings. Above the column headings, you can see the search bar control, which can be used to filter the poses index either by name of the pose, or by the muscle groups that the poses will help you target. The code works by assigning the user entered text to a string variable and searching the Name, PrimaryMuscle, and SecondaryMuscle properties to see if they contain the substring. Only if there is a match are they added to the List that the View displays.
+
+## YogNatomy Account Registration
+![accountregistration](https://github.com/cadedillon/YogNatomy/blob/master/YogNatomy%20Annotated%20AccountRegistration.jpg?raw=true)
+This is the view for the Account Registration controller's create method.
