@@ -3,6 +3,7 @@
 Source code and presentation for YogNatomy Web application. Yognatomy is built using ASP.NET MVC 5, 
 is based on an Azure SQL Server database, and is hosted in the Azure cloud at: https://yognatomy.azurewebsites.net
 
+<a name="toc"></a>
 # Table of Contents
 1. [What is YogNatomy?](#introduction)
 2. [Requirements](#requirements)
@@ -11,6 +12,7 @@ is based on an Azure SQL Server database, and is hosted in the Azure cloud at: h
 5. [Homepage](#homepage)
 6. [Poses Browse](#poses)
 7. [Account Registration](#registration)
+8. [Upcoming Features](#features)
 
 <a name="introduction"></a>
 ## What is YogNatomy? 
@@ -92,3 +94,18 @@ This is the view that is returned by the "Register" button control, at the botto
 
 ### Authentication and Security
 I have implemented Authentication on the Model Class "UserAccount" in order to place constraints on the data that the Windows Form will accept. I did this by using the System.Data.Annotations namespace. As you can see in the screen capture, the user input for the password is masked, which I accomplished by specifying the form input type as "password" in the form-group class. Right now, unfortunately, the password is just stored as plain-text in my database, but very soon I will be implementing a one-way hash function that will encrypt the user's password before it writes it to the database in order to increase security.  
+
+<a name="features"></a>
+# Upcoming Features
+
+| Feature          | Description         | ETC               |
+|:----------------:|:-------------------:|:-----------------:|
+|One-way Password Hashing | I will implement a form of password hashing in order to help protect my clients in the event of a data breach. The encryption function will take the user's text password and encrypt it, so that only the encrypted version of the password will be stored in the database. | Approximately 6 hours| 
+User Login | To comply with System Requirement 3.2, the user must be able to login to their created accounts. I will accomplish this by creating a windows form page in which the user can enter their username and password, which will then be ran through the hash function, and matched against the encrypted password stored in the database. If successful, the user will be able to access their account information. | Approximately 12 hours |
+Pose Details Page | The pose details page, as laid out in the Wireframe section, will contain all of the information relevant to the pose being detailed. This page will include dynamic image rendering, pose description information (pulled from the database), and hyperlinks to related poses. In order to implement this feature I will need to modify the existing pose create view, pose model entity, and pose database table. | Approximately 20 hours |
+
+**All time estimates are based on the Mythical Man Hour.**
+
+## Thank you for taking the time to ReadMe!
+
+[Return](#toc)
