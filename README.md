@@ -1,7 +1,41 @@
 # YogNatomy
-Source code for YogNatomy Web application. YogNatomy is an application which seeks to make Yoga 
-practice fun, intuitive, and effective for practitioners of all skill levels. Yognatomy is built using ASP.NET MVC 5, 
+
+Source code and presentation for YogNatomy Web application. Yognatomy is built using ASP.NET MVC 5, 
 is based on an Azure SQL Server database, and is hosted in the Azure cloud at: https://yognatomy.azurewebsites.net
+
+## What is YogNatomy?
+
+*YogNatomy is an application which seeks to make Yoga practice fun, intuitive, and effective for practitioners of all skill levels.*
+
+First and foremost, YogNatomy is a tool to aid the user in performing maintenance on their bodies.
+* We all can become rundown after periods of intense physical activity, injury, or as a result of the aging process.
+* If we don’t maintain our bodies correctly, they can fall into a state of disrepair.
+
+Yoga is a form of exercise that has been used for thousands of years to correct muscular imbalances, postural deficiencies, and aid in recovery.
+* Ultimately, YogNatomy brings the knowledge and power to maintain and potentially rehabilitate muscular integrity and health to anyone with a smartphone and a mat!
+
+
+# Design Documentation
+
+## Requirements 
+![requiremnts 3.1](https://github.com/cadedillon/YogNatomy/blob/master/Requirements%203.1.PNG?raw=true)
+
+![requirements 3.2 - 3.5](https://github.com/cadedillon/YogNatomy/blob/master/Requirements%203.2%20-%203.5.PNG?raw=true)
+
+## Database Diagram
+
+![database diagram](https://github.com/cadedillon/YogNatomy/blob/master/YogNatomy%20Database%20Diagram.PNG?raw=true)
+
+Database Diagram that would become the foundation of the SQL Server Database that YogNatomy is built upon. The tables in this diagram represent the Model Entities that I have built to read and write data to and from the database.
+
+## Wireframe Mock Ups
+
+![homepagemock](https://github.com/cadedillon/YogNatomy/blob/master/YogNatomy%20Landing%20UI.png?raw=true)
+Original Wireframe design for YogNatomy homepage. 
+![registrationmock](https://github.com/cadedillon/YogNatomy/blob/master/User%20Registration%20Page.PNG?raw=true)
+Original Wireframe design for user registration page. The tidal wave has been done away with in the live version for the sake of cohesion.
+![posedetailsmock](https://github.com/cadedillon/YogNatomy/blob/master/YogNatomy%20Pose%20Information.PNG?raw=true)
+Original Wireframe for the pose details page. This page has yet to be implemented other than the standard CRUD details page, but will feature dynamic image rendering and Bootstrap components.
 
 ## YogNatomy Homepage
 ![homepage](https://github.com/cadedillon/YogNatomy/blob/master/YogNatomy%20Annotated%20Homepage.jpg?raw=true)
