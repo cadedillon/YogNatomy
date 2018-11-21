@@ -3,7 +3,9 @@
 Source code and presentation for YogNatomy Web application. Yognatomy is built using ASP.NET MVC 5, 
 is based on an Azure SQL Server database, and is hosted in the Azure cloud at: https://yognatomy.azurewebsites.net
 
-[![IMAGE ALT TEXT HERE](https://.img.youtu.be/73zXgcp3t9Q.jpg)](https://youtu.be/73zXgcp3t9Q)
+## In-Class Video Presentation
+
+[![YogNatomy Video Presentation](http://img.youtube.com/vi/73zXgcp3t9Q/0.jpg)](https://youtu.be/73zXgcp3t9Q)
 
 <a name="toc"></a>
 # Table of Contents
