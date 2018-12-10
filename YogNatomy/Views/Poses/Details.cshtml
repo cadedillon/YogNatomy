@@ -58,9 +58,15 @@
             @Html.DisplayFor(model => model.FitnessLevel)
         </dd>
 
+        <dd>
+            <img src="@Html.DisplayFor(model => model.PoseImage)"/>
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoseDescription)
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

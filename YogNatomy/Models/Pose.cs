@@ -17,5 +17,7 @@ namespace YogNatomy.Models
         public string SecondaryMuscle { get; set; }
         public int GroupId { get; set; }
         public int FitnessLevel { get; set; }
+        public string PoseImage { get; set; }
+        public string PoseDescription { get; set; }
     }
 }
